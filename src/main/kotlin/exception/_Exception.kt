@@ -25,6 +25,7 @@ fun main() {
     println(c.length)
 }
 
-fun failFast(message: String): Nothing {
+fun failFast(message: String): Nothing { // Nothing은 모든 타입의 하위타입임
     throw IllegalArgumentException(message)
 }
+
