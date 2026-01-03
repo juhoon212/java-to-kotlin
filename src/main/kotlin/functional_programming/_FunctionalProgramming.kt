@@ -36,7 +36,19 @@ fun main() {
 
     // 참조로 표현
     numberList.map(String::toInt).forEach(::println)
+
+    val argFunc = arg1 { println(it)}
+    val arg2Func =  { a: String, b: String -> println(a + b) }
+
+    val ex1 = arg2Func.let {
+        it("a", "b")
+        "123"
+    }
+    println(ex1)
 }
+
+fun arg1(block: (String) -> Unit) {}
+fun arg2(block: (String, String) -> Unit) {}
 
 // 람다 표현식 전체
 val sum: (Int, Int) -> Int = { x:Int, y:Int -> x + y }
